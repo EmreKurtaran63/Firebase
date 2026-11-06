@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { onAuthStateChanged, type User } from 'firebase/auth';
 import { useState, useEffect } from 'react';
+import firebase from "/firebase.png";
 
 
 
@@ -33,12 +34,18 @@ function Header() {
 
   return (
     <div className='Header-div'>
-      <h3 className='Header-text'> FİREBASE</h3>
+      <div className="Header-text-div">
+        <div style={{ width: "50px", height: "50px", borderRadius: "100%", boxShadow: "0px 0px 10px #f89a60" ,textAlign:"center"}}>
+          <img style={{height: "90%" }} src={firebase} />
+        </div>
+        <h3 className='Header-text' style={{textShadow:" 5px 5px 50px white"}}> FİREBASE</h3>
+      </div>
+
       <Stack spacing={2} direction="row">
-       {user && <Button  onClick={signOutAuth} variant="contained" color="error" size='small'> Çıkış Yap<OutputIcon sx={{ marginLeft: "10px" }} /></Button>} 
+        {user && <Button onClick={signOutAuth} variant="contained" color="error" size='small'> Çıkış Yap<OutputIcon sx={{ marginLeft: "10px" }} /></Button>}
       </Stack>
 
-    </div>
+    </div >
   )
 }
 
