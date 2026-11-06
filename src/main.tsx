@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/Websitelerim/React_Projelerim/Firebase">
     <App />
   </BrowserRouter>
 )
